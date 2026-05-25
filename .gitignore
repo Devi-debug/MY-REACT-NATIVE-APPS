@@ -1,0 +1,8 @@
+# Ignore Node modules globally
+node_modules/
+*/node_modules/
+
+# Ignore Expo / React Native build folders
+.expo/
+android/app/build/
+ios/build/

@@ -120,6 +120,7 @@ export default function App() {
                   <View style={styles.inputWrapper}>
                     <Text style={styles.heading}>Include lowercase</Text>
                     <BouncyCheckbox
+                      disableText={true}
                       useBuiltInState={false}
                       isChecked={lowercase}
                       onPress={() => setLowercase(!lowercase)}
@@ -130,6 +131,7 @@ export default function App() {
                   <View style={styles.inputWrapper}>
                     <Text style={styles.heading}>Include uppercase</Text>
                     <BouncyCheckbox
+                      disableText={true}
                       useBuiltInState={false}
                       isChecked={uppercase}
                       onPress={() => setUppercase(!uppercase)}
@@ -140,6 +142,7 @@ export default function App() {
                   <View style={styles.inputWrapper}>
                     <Text style={styles.heading}>Include numbers</Text>
                     <BouncyCheckbox
+                      disableText={true}
                       useBuiltInState={false}
                       isChecked={numbers}
                       onPress={() => setNumbers(!numbers)}
@@ -150,6 +153,7 @@ export default function App() {
                   <View style={styles.inputWrapper}>
                     <Text style={styles.heading}>Include symbols</Text>
                     <BouncyCheckbox
+                      disableText={true}
                       useBuiltInState={false}
                       isChecked={symbols}
                       onPress={() => setSymbols(!symbols)}
@@ -165,6 +169,7 @@ export default function App() {
                     >
                       <Text style={styles.primaryBtnText}>Generate Password</Text>
                     </TouchableOpacity>
+
                     <TouchableOpacity
                       style={styles.secondarybtn}
                       onPress={() => {
@@ -202,7 +207,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#ebe8e8',
     margin: 8,
-    padding: 8,
+    padding: 4,
   },
   title: {
     fontSize: 32,
@@ -214,6 +219,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
     flexDirection: 'row',
+    width: '100%',
   },
   inputColumn: {
     flexDirection: 'column',

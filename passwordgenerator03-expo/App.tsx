@@ -41,6 +41,10 @@ export default function App() {
     const numberChars = '0123456789';
     const symbolChars = '!@#$%^&*()_+';
 
+    console.log('--- Generate Password Clicked ---');
+    console.log('Password Length requested:', passwordLength);
+    console.log('Options:', { uppercase, lowercase, numbers, symbols });
+
     if (uppercase) {
       characterList += upperCaseChars;
     }
@@ -53,7 +57,12 @@ export default function App() {
     if (symbols) {
       characterList += symbolChars;
     }
+
+    console.log('Character pool built:', characterList);
+
     const passwordResult = createPassword(characterList, passwordLength);
+
+    console.log('Generated Password:', passwordResult);
 
     setPassword(passwordResult);
     setIsPassGenerated(true);
@@ -69,12 +78,14 @@ export default function App() {
   };
 
   const resetPasswordState = () => {
+    console.log('--- Reset Button Clicked ---');
     setPassword('');
     setIsPassGenerated(false);
     setLowercase(true);
     setUppercase(false);
     setNumbers(false);
     setSymbols(false);
+    console.log('State has been reset to defaults.');
   };
 
   return (
@@ -123,7 +134,10 @@ export default function App() {
                       disableText={true}
                       useBuiltInState={false}
                       isChecked={lowercase}
-                      onPress={() => setLowercase(!lowercase)}
+                      onPress={() => {
+                        console.log('Lowercase toggled ->', !lowercase);
+                        setLowercase(!lowercase);
+                      }}
                       fillColor="#29AB87"
                     />
                   </View>
@@ -134,7 +148,10 @@ export default function App() {
                       disableText={true}
                       useBuiltInState={false}
                       isChecked={uppercase}
-                      onPress={() => setUppercase(!uppercase)}
+                      onPress={() => {
+                        console.log('Uppercase toggled ->', !uppercase);
+                        setUppercase(!uppercase);
+                      }}
                       fillColor="#FED85D"
                     />
                   </View>
@@ -145,7 +162,10 @@ export default function App() {
                       disableText={true}
                       useBuiltInState={false}
                       isChecked={numbers}
-                      onPress={() => setNumbers(!numbers)}
+                      onPress={() => {
+                        console.log('Numbers toggled ->', !numbers);
+                        setNumbers(!numbers);
+                      }}
                       fillColor="#C9A0DC"
                     />
                   </View>
@@ -156,7 +176,10 @@ export default function App() {
                       disableText={true}
                       useBuiltInState={false}
                       isChecked={symbols}
-                      onPress={() => setSymbols(!symbols)}
+                      onPress={() => {
+                        console.log('Symbols toggled ->', !symbols);
+                        setSymbols(!symbols);
+                      }}
                       fillColor="#FC80A5"
                     />
                   </View>
@@ -196,7 +219,7 @@ export default function App() {
         </SafeAreaView>
       </ScrollView>
     </SafeAreaProvider>
-  );
+  );  
 }
 
 const styles = StyleSheet.create({

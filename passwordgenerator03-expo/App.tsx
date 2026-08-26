@@ -219,7 +219,7 @@ export default function App() {
         </SafeAreaView>
       </ScrollView>
     </SafeAreaProvider>
-  );  
+  );
 }
 
 const styles = StyleSheet.create({
